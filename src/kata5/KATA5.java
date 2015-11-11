@@ -15,8 +15,8 @@ public class KATA5 {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
 
-        Class.forName("org.sqlite.JDBC");
-        Connection conec = DriverManager.getConnection("jdbc:sqlite:DDBBKATA");
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        Connection conec = DriverManager.getConnection("jdbc:oracle:thin:@10.0.2.15:1521:orcl", "system", "orcl");
 
         Statement state = conec.createStatement();
         ResultSet rs = state.executeQuery("SELECT * FROM PEOPLE");
